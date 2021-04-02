@@ -14,6 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'frazrepo/vim-rainbow'
 Plugin 'preservim/nerdtree'
 Plugin 'whatyouhide/vim-gotham'
+Plugin 'VundleVim/YouCompleteMe'
 " 在这行前添加你的插件
 call vundle#end()            " required
 filetype plugin indent on    " required
