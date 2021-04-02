@@ -89,4 +89,4 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
 "配色
-colorscheme gotham256
+"colorscheme gotham256
