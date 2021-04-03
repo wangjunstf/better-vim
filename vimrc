@@ -90,3 +90,6 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 "配色
 "colorscheme gotham256
+let g:ycm_global_ycm_extra_conf='/home/mygit/.vim/.ycm_extra_conf.py'
+
+let g:ycm_confirm_extra_conf = 0
