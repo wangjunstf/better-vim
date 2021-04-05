@@ -11,10 +11,18 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Add your plugins to this place 在这里添加你的插件
-Plugin 'frazrepo/vim-rainbow'
+" 显示括号颜色
+"Plugin 'frazrepo/vim-rainbow'
 Plugin 'preservim/nerdtree'
 Plugin 'whatyouhide/vim-gotham'
 Plugin 'VundleVim/YouCompleteMe'
+"markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
+
+"leetcode
+Plugin 'ianding1/leetcode.vim'
 " 在这行前添加你的插件
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -90,6 +98,54 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 "配色
 "colorscheme gotham256
-let g:ycm_global_ycm_extra_conf='/home/mygit/.vim/.ycm_extra_conf.py'
 
+"解决No .ycm_extra_conf.py问题
+let g:ycm_global_ycm_extra_conf='/home/mygit/.vim/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
+
+"设置leetcode
+let  g:leetcode_browser='firefox'
+let  g:leetcode_china = 1
+nnoremap <leader>ll :LeetCodeList<cr>
+nnoremap <leader>lt :LeetCodeTest<cr>
+nnoremap <leader>ls :LeetCodeSubmit<cr>
+nnoremap <leader>li :LeetCodeSignIn<cr>
+
+
+"配置python
+func SetTitle()
+call setline(1, "\#!/usr/bin/python")
+call setline(2, "\# -*- coding=utf8 -*-")
+call setline(3, "\"\"\"")
+call setline(4, "\# @Author : wangjun")
+call setline(5, "\# @Created Time : ".strftime("%Y-%m-%d %H:%M:%S"))
+call setline(6, "\# @Description : ")
+call setline(7, "\"\"\"")
+normal G
+normal o
+normal o
+normal i
+endfunc
+autocmd bufnewfile *.py call SetTitle()
+
+
+"配置
+func SetCpp()
+call setline(1, "/**")
+call setline(2, "\# @Author : wangjun")
+call setline(3, "\# @Created Time : ".strftime("%Y-%m-%d %H:%M:%S"))
+call setline(4, "\# @Description : ")
+call setline(5, "**/")
+call setline(6, " ")
+call setline(7, "#include <iostream>")
+call setline(8, "using namespace std;")
+call setline(9, "")
+call setline(10, "int main(){")
+call setline(11, "     ")
+call setline(12, "    return 0;")
+call setline(13, "}")
+normal 11G
+normal 4l
+normal i 
+endfunc
+autocmd bufnewfile *.cpp call SetCpp()
