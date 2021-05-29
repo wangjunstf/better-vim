@@ -87,8 +87,6 @@ set encoding=utf-8
 set fileencodings=utf-8,gbk,cp936,latin-1
 " 解决consle输出乱码
 
-au FileType c,cpp,objc,objcpp call rainbow#load()
-let g:rainbow_active = 1
 
 "目录树
 nnoremap <leader>n :NERDTreeFocus<CR>
